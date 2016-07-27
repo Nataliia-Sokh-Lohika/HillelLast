@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Full regression suite" verbose="5">
+  <test name="Login tests">
+    <classes>
+      <class name="project.tests.Login"/>
+    </classes>
+  </test>
+  <test name="Home Page tests">
+    <classes>
+      <class name="project.tests.HomePage"/>
+    </classes>
+  </test>
+  <test name="Search tests">
+    <classes>
+      <class name="project.tests.Search"/>
+    </classes>
+  </test>
+</suite>
