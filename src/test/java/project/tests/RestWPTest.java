@@ -29,12 +29,16 @@ public class RestWPTest extends JerseyTest {
     @DataSource(json = "src/test/resources/likes140.json")
     public void testWordPressAPI(String testData, String verificationData) throws JSONException, ParseException, IOException {
 
-        WebResource webResource = client().resource("https://public-api.wordpress.com");
+
+
+        Assert.assertEquals(testData,verificationData);
+
+      /*  WebResource webResource = client().resource("https://public-api.wordpress.com");
 
         JSONObject json =
                 webResource.path("/rest/v1.1/sites/sergeywebdrivertest.wordpress.com/posts/140/likes")
                         .get(JSONObject.class);
-
+*/
 
 //TO Read json
      /*   String expectedJson;
@@ -55,7 +59,7 @@ public class RestWPTest extends JerseyTest {
 */
 //        JSONObject jsonExp = new JSONObject(testData);
 
-        Assert.assertEquals(testData,verificationData);
+
 
 //        Assert.assertEquals(json.getJSONArray("likes").getJSONObject(0).getJSONArray("").,jsonExp.getJSONArray("likes"),"Good message to understand");
 

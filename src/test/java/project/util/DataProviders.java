@@ -14,16 +14,20 @@ import java.util.*;
  */
 public class DataProviders {
 
+
     @DataProvider(name = "getJson")
-    public static Iterator<Object[]> remoteServiceDataProvider() throws ParseException, IOException {
+    public static Iterator<Object[]> remoteServiceDataProvider(Method m) throws ParseException, IOException {
+
+            DataSource sourceAnnotation = m.getAnnotation(DataSource.class);
+            final String jsonFile = sourceAnnotation.json();
 
         Collection<Object[]> dp = new ArrayList<Object[]>() {
             {
-                BufferedReader br = new BufferedReader(new FileReader("/Users/nsokh/hillel/TEstAutomationForYandex/src/test/resources/likes140.json"));
+                BufferedReader br = new BufferedReader(new FileReader(jsonFile));
                 try {
                     String line = br.readLine();
                     while (line != null) {
-                        add(new Object[]{line});
+                        add(new Object[]{line, br.readLine()});
                         line = br.readLine();
                     }
                 } finally {
@@ -36,5 +40,4 @@ public class DataProviders {
     }
 }
 
-//            DataSource sourceAnnotation = m.getAnnotation(DataSource.class);
-//            final String jsonFile = sourceAnnotation.json();
+

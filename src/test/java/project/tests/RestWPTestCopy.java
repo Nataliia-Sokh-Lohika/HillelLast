@@ -24,17 +24,31 @@ public class RestWPTestCopy extends JerseyTest {
         return new WebAppDescriptor.Builder().build();
     }
 
-    @Test()
-    public void testWordPressAPI() throws JSONException, ParseException, IOException {
+    @Test(dataProvider = "getJson", dataProviderClass = DataProviders.class)
+    @DataSource(json = "src/test/resources/likes140.json")
+    public void testWordPressAPI(String expectedJson) throws JSONException, ParseException, IOException {
 
         WebResource webResource = client().resource("https://public-api.wordpress.com");
 
         JSONObject json =
                 webResource.path("/rest/v1.1/sites/sergeywebdrivertest.wordpress.com/posts/140/likes")
                         .get(JSONObject.class);
+        JSONObject jsonExp = new JSONObject(expectedJson);
+
+        Assert.assertEquals(json,jsonExp);
+
+
+
+
+
+
+
+
+
+
 
 //TO Read json
-        String expectedJson;
+    /*    String expectedJson;
         BufferedReader br = new BufferedReader(new FileReader("src/test/resources/likes140.json"));
         try {
             StringBuilder sb = new StringBuilder();
@@ -48,10 +62,8 @@ public class RestWPTestCopy extends JerseyTest {
         } finally {
             br.close();
         }
+*/
 
-        JSONObject jsonExp = new JSONObject(expectedJson);
-
-        Assert.assertEquals(json,jsonExp);
 
     }
 
