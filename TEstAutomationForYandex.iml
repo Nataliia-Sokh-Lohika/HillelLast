@@ -72,7 +72,7 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:2.53.0" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey.jersey-test-framework:jersey-test-framework-core:1.9" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.2" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey:jersey-server:1.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: asm:asm:3.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey:jersey-client:1.9" level="project" />
@@ -95,5 +95,6 @@
     <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml-schemas:3.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.03" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
   </component>
 </module>

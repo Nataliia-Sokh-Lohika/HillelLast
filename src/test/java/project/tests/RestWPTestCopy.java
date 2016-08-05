@@ -8,26 +8,24 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.json.simple.parser.ParseException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import project.util.DataProviders;
 import project.util.DataSource;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class RestWPTest extends JerseyTest {
+public class RestWPTestCopy extends JerseyTest {
 
     @Override
     protected AppDescriptor configure() {
         return new WebAppDescriptor.Builder().build();
     }
 
-
-
-    @Test(dataProvider = "getJson", dataProviderClass = DataProviders.class)
-    @DataSource(json = "src/test/resources/likes140.json")
-    public void testWordPressAPI(String testData, String verificationData) throws JSONException, ParseException, IOException {
+    @Test()
+    public void testWordPressAPI() throws JSONException, ParseException, IOException {
 
         WebResource webResource = client().resource("https://public-api.wordpress.com");
 
@@ -35,10 +33,9 @@ public class RestWPTest extends JerseyTest {
                 webResource.path("/rest/v1.1/sites/sergeywebdrivertest.wordpress.com/posts/140/likes")
                         .get(JSONObject.class);
 
-
 //TO Read json
-     /*   String expectedJson;
-        BufferedReader br = new BufferedReader(new FileReader("/Users/nsokh/hillel/TEstAutomationForYandex/src/test/resources/likes140.json"));
+        String expectedJson;
+        BufferedReader br = new BufferedReader(new FileReader("src/test/resources/likes140.json"));
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
@@ -51,42 +48,10 @@ public class RestWPTest extends JerseyTest {
         } finally {
             br.close();
         }
+
         JSONObject jsonExp = new JSONObject(expectedJson);
-*/
-//        JSONObject jsonExp = new JSONObject(testData);
 
-        Assert.assertEquals(testData,verificationData);
-
-//        Assert.assertEquals(json.getJSONArray("likes").getJSONObject(0).getJSONArray("").,jsonExp.getJSONArray("likes"),"Good message to understand");
-
-
-
-// To write a file
-/*
-        FileWriter file = new FileWriter("/Users/nsokh/hillel/TEstAutomationForYandex/src/test/resources/likes140.json") ;
-            file.write(json.toString());
-        file.flush();
-        file.close();
-
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + json);
-*/
-
-
-
-
-
-
-
-
-//        Неудачная попытка что-то сделать((((
-//        Assert.assertEquals(json.get("found"), 1);
-
-//        JSONObject json2 =
-//                webResource.path("/rest/v1.1/sites/sergeywebdrivertest.wordpress.com/posts/140/likes")
-//                        .get(JSONObject.class);
-//
-//        Assert.assertEquals(json2.get("found"), 0);
+        Assert.assertEquals(json,jsonExp);
 
     }
 
