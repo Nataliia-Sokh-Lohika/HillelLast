@@ -5,7 +5,7 @@
   <test name="Rest API suite">
     <classes>
       <class name="project.tests.LoginTest"/>
-      <class name="project.tests.IdeaTests"/>
+      <class name="project.tests.IdeaInitTests"/>
     </classes>
   </test>
 </suite>

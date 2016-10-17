@@ -7,9 +7,6 @@ import org.testng.annotations.DataProvider;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/**
- * Created by nsokh on 7/26/16.
- */
 public class XLSReader {
         public static Object[][] readFromExcel(String path) throws IOException {
             XSSFWorkbook myExcelBook = new XSSFWorkbook(new FileInputStream(path));

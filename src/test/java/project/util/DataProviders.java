@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * Created by nsokh on 8/2/16.
- */
 public class DataProviders {
 
 
@@ -27,7 +24,7 @@ public class DataProviders {
                 try {
                     String line = br.readLine();
                     while (line != null) {
-                        add(new Object[]{line, br.readLine()});
+                        add(new Object[]{line});
                         line = br.readLine();
                     }
                 } finally {

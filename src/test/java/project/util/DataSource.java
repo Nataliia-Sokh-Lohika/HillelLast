@@ -5,9 +5,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * Created by nsokh on 8/5/16.
- */
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

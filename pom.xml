@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>petrosoftink</groupId>
-  <artifactId>testTask</artifactId>
+  <groupId>automationIB</groupId>
+  <artifactId>automation</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -62,7 +62,7 @@
     <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-json</artifactId>
-      <version>1.19.1</version>
+      <version>1.19.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.poi</groupId>
@@ -74,6 +74,13 @@
       <artifactId>json-simple</artifactId>
       <version>1.1.1</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+
   </dependencies>
   <build>
     <resources>
@@ -186,14 +193,14 @@
     <profile>
       <id>testhost</id>
       <properties>
-        <site.url>https://yandex.com/</site.url>
+        <site.url>https://localhost</site.url>
         <email.yandex>https://mail.yandex.com/</email.yandex>
       </properties>
     </profile>
     <profile>
       <id>prodhost</id>
       <properties>
-        <site.url>http://prodhost.com/</site.url>
+        <site.url>http://172.30.26.9:8080</site.url>
       </properties>
     </profile>
     <!-- grid -->
